@@ -1,0 +1,11 @@
+#Основной каталог D:/Project
+
+#Запустить сервер
+D:\Project\venv\Scripts\python.exe D:/Project/manage.py runserver 127.0.0.1:8000
+
+#Создать администратора
+D:\Project\venv\Scripts\python.exe D:/Project/manage.py createsuperuser
+
+#Выполнить миграцию БД
+D:\Project\venv\Scripts\python.exe D:/Project/manage.py makemigrations Main
+D:\Project\venv\Scripts\python.exe D:/Project/manage.py migrate

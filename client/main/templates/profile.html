@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    {% load staticfiles %}
+</head>
+<body>
+    {% csrf_token %}
+    <h1>Ваш профиль</h1>
+    {%if error == 'already exists'%}
+        <h3>Этот номер уже существует.</h3>
+    {%endif%}
+    {%if error == 'wrong number'%}
+        <h3>Номер не соответсвует стандарту.</h3>
+    {%endif%}
+    {%if plates|length != 0%}
+        <h4>Номера машин:</h4>
+        <table>
+        {%for plate in plates%}
+            <tr>
+                <td>{{plate.number}}</td><td>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input name="method" value="delete_plate" hidden="True">
+                        <input name="plate_number" value="{{plate.number}}" hidden="True">
+                        <input type="submit" value="Удалить номер">
+                    </form>
+                </td>
+            </tr>
+        {%endfor%}
+        </table>
+    {% else %}
+    <h3>У вас нет номеров</h3>
+    <p>Пример:  <img src="{% static 'images/plate_example.jpeg'%}" width='20%' height='20%'></p>
+    <p>Номер: <b>Р070ВК 92</b> или <b>Р070ВК</b></p>
+    {%endif%}
+    <form method="post">
+        {% csrf_token %}
+        <input name="plate_number">
+        <input name="method" value="register_plate" hidden="True">
+        <input type="submit" value="Добавить номер">
+    </form>
+    <form method="post" enctype = 'multipart/form-data'>
+        {% csrf_token %}
+        <input name="image" type="file">
+        <span>Распознавать только основной номер </span>
+        <input name="only_main" type="checkbox" checked>
+        <input name="method" value="recognize" hidden="True">
+        <input type="submit" value="Проверить">
+    </form>
+    {%if recognized%}
+    <h1>Пропустить</h1>
+    {%endif%}
+    {%if recognized == False%}
+    <h1>Не пропускать</h1>
+    {%endif%}
+</body>
+</html>

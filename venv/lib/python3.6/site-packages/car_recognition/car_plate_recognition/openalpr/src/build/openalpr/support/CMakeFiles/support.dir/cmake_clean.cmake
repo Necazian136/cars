@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/support.dir/filesystem.cpp.o"
+  "CMakeFiles/support.dir/timing.cpp.o"
+  "CMakeFiles/support.dir/tinythread.cpp.o"
+  "CMakeFiles/support.dir/platform.cpp.o"
+  "CMakeFiles/support.dir/utf8.cpp.o"
+  "CMakeFiles/support.dir/version.cpp.o"
+  "CMakeFiles/support.dir/re2/bitstate.cc.o"
+  "CMakeFiles/support.dir/re2/compile.cc.o"
+  "CMakeFiles/support.dir/re2/dfa.cc.o"
+  "CMakeFiles/support.dir/re2/filtered_re2.cc.o"
+  "CMakeFiles/support.dir/re2/mimics_pcre.cc.o"
+  "CMakeFiles/support.dir/re2/nfa.cc.o"
+  "CMakeFiles/support.dir/re2/onepass.cc.o"
+  "CMakeFiles/support.dir/re2/parse.cc.o"
+  "CMakeFiles/support.dir/re2/perl_groups.cc.o"
+  "CMakeFiles/support.dir/re2/prefilter.cc.o"
+  "CMakeFiles/support.dir/re2/prefilter_tree.cc.o"
+  "CMakeFiles/support.dir/re2/prog.cc.o"
+  "CMakeFiles/support.dir/re2/re2.cc.o"
+  "CMakeFiles/support.dir/re2/regexp.cc.o"
+  "CMakeFiles/support.dir/re2/set.cc.o"
+  "CMakeFiles/support.dir/re2/simplify.cc.o"
+  "CMakeFiles/support.dir/re2/stringpiece.cc.o"
+  "CMakeFiles/support.dir/re2/tostring.cc.o"
+  "CMakeFiles/support.dir/re2/unicode_casefold.cc.o"
+  "CMakeFiles/support.dir/re2/unicode_groups.cc.o"
+  "CMakeFiles/support.dir/re2/util/hash.cc.o"
+  "CMakeFiles/support.dir/re2/util/stringprintf.cc.o"
+  "CMakeFiles/support.dir/re2/util/rune.cc.o"
+  "CMakeFiles/support.dir/re2/util/strutil.cc.o"
+  "CMakeFiles/support.dir/re2/util/valgrind.cc.o"
+  "libsupport.pdb"
+  "libsupport.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/support.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
